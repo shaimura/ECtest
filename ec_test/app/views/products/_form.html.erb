@@ -1,0 +1,15 @@
+<%= form_for @product do |f| %>
+
+	<div class="field">
+		<%= f.label :album, "album" %>
+		<%= f.text_field :album %>
+	</div>
+
+	<h3>Artists</h3>
+	<div id="artists">
+		<%= f.fields_for :artists do |artist| %>
+		<%= render 'artists_fields', f: artist %>
+		<% end %>
+		<%= f.submit %>
+	</div>
+<% end %>
